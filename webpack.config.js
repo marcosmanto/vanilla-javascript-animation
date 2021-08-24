@@ -1,4 +1,6 @@
 const path = require('path')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: "./src/app.js",
@@ -6,7 +8,15 @@ module.exports = {
     filename: "app.js",
     path: path.resolve(__dirname, "dist")
   },
-  mode: "none",
+  mode: "development",
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: 'index.html',
+      inject: 'body'
+    })
+  ],
   module: {
     rules: [
       {
