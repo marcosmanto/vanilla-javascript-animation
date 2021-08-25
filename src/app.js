@@ -35,12 +35,14 @@ function mouseClicked() {
     }
 } */
 
+
+
 /**
  * CANVAS CODE
  */
-const canvas = document.getElementById("animated-canvas")
-const context = canvas.getContext("2d")
-let circleX = 60
+// const canvas = document.getElementById("animated-canvas")
+// const context = canvas.getContext("2d")
+// let circleX = 60
 
 /**
  * Interpolation with 0..1 range
@@ -49,13 +51,14 @@ let circleX = 60
  */
 
 /*********** Easing filters  ********************/
-const SMOOTHSTEP = (x) => (x) * (x) * (3 - 2 * (x))
-const SMOOTHERSTEP = (x) => ((x) * (x) * (x) * ((x) * ((x) * 6 - 15) + 10))
-const SIMPLEPOWER = (x) => x * x // ease-in
-const SIMPLEPOWERREVERSE = (x) => 1 - (1 - x) * (1 - x) // ease-out
+// const SMOOTHSTEP = (x) => (x) * (x) * (3 - 2 * (x))
+// const SMOOTHERSTEP = (x) => ((x) * (x) * (x) * ((x) * ((x) * 6 - 15) + 10))
+// const SIMPLEPOWER = (x) => x * x // ease-in
+// const SIMPLEPOWERREVERSE = (x) => 1 - (1 - x) * (1 - x) // ease-out
 
 /*********** / Easing filters  ********************/
 
+/*
 const steps = 100
 const origin = 10
 const destination = 590
@@ -104,4 +107,25 @@ function clearCanvas() {
   context.clearRect(0, 0, canvas.clientWidth, canvas.height)
 }
 
-let canvasInterval = requestAnimationFrame(canvasAnimation)
+let canvasInterval = requestAnimationFrame(canvasAnimation) */
+
+
+/**
+ *  WEB ANIMATION API
+ *
+ */
+
+const rotatingSquare = document.getElementById('web-animation')
+
+rotatingSquare.animate(
+  [
+    {backgroundColor: '#000'},
+    {backgroundColor: '#440000'},
+    {backgroundColor: '#000'},
+
+  ],
+  {
+    duration: 1000,
+    iterations: 7
+  }
+)

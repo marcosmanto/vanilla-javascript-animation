@@ -23,4 +23,11 @@ canvas {
     border: 4px solid crimson;
 }
 
+#web-animation {
+    background-color: black;
+    border: 4px solid crimson;
+    width: 200px;
+    height: 200px;
+    margin: 5rem;
+}
 
