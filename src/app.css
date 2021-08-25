@@ -21,6 +21,7 @@ body {
 canvas {
     margin: 20px;
     border: 4px solid crimson;
+    background-color: rgb(31, 31, 31);
 }
 
 #web-animation {
@@ -29,5 +30,20 @@ canvas {
     width: 200px;
     height: 200px;
     margin: 5rem;
+}
+
+#canvas-container {
+    position: relative;
+    display: inline-block;
+    background-color: pink;
+}
+
+#counter {
+    position: absolute;
+    right: 0;
+    background-color: aliceblue;
+    font-size: 2rem;
+    color: darkred;
+    padding: 10px;
 }
 

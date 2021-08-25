@@ -20,6 +20,11 @@ module.exports = {
           globOptions: {
             ignore: ['**/index.html']
           }
+        },
+        {
+          context: './src',
+          from: 'img/**/*',
+          noErrorOnMissing: true
         }
       ]
     }),

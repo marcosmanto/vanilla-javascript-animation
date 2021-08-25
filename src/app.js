@@ -115,6 +115,7 @@ let canvasInterval = requestAnimationFrame(canvasAnimation) */
  *
  */
 
+/*
 const btnPlay = document.getElementById('play')
 const btnPause = document.getElementById('pause')
 const btnSpeedUp = document.getElementById('speedup')
@@ -140,4 +141,49 @@ btnPlay.addEventListener('click', () => rotatingSquare.play())
 btnPause.addEventListener('click', () => rotatingSquare.pause())
 btnSpeedUp.addEventListener('click', () => rotatingSquare.playbackRate+=0.2)
 btnSlowDown.addEventListener('click', () => rotatingSquare.playbackRate-=0.2)
+*/
+
+
+
+/**
+ * SPRITE ANIMATION
+ */
+
+const canvas = document.getElementById('canvas')
+const counter = document.getElementById('counter')
+const ctx = canvas.getContext('2d')
+const img = new Image()
+let count = 0
+let x
+let y
+let start
+
+function draw(time) {
+  /*
+  if(count !== 60) requestAnimationFrame(draw) // pause in a specific frame
+  else
+    console.log(new Date() - start) // in my tests vary between 900..1150 ~ 60fps
+  */
+
+  requestAnimationFrame(draw)
+  ctx.clearRect(0, 0, 212, 201)
+  counter.innerText = count
+  x = (count % 9) * 212
+  y = Math.floor(count/9) * 201
+
+  ctx.drawImage(img, x, y, 212, 201, 0, 0, 212, 201)
+
+  if (count === 149)
+    count = 0
+  else
+    count++
+
+}
+
+img.src = 'img/sprite_sheet.png'
+img.onload = () => {
+  console.log('start time')
+  start = new Date()
+  draw()
+}
 
