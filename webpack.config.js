@@ -1,6 +1,7 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: "./src/app.js",
@@ -10,6 +11,18 @@ module.exports = {
   },
   mode: "development",
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          context: './src',
+          from: '**/*.html',
+          noErrorOnMissing: true,
+          globOptions: {
+            ignore: ['**/index.html']
+          }
+        }
+      ]
+    }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
