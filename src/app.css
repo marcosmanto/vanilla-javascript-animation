@@ -18,4 +18,9 @@ body {
     position: relative;
 }
 
+canvas {
+    margin: 20px;
+    border: 4px solid crimson;
+}
+
 
