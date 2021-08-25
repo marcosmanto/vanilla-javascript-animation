@@ -115,18 +115,29 @@ let canvasInterval = requestAnimationFrame(canvasAnimation) */
  *
  */
 
+const btnPlay = document.getElementById('play')
+const btnPause = document.getElementById('pause')
+const btnSpeedUp = document.getElementById('speedup')
+const btnSlowDown = document.getElementById('slowdown')
+
 const rotatingSquare = document.getElementById('web-animation')
+  .animate(
+    [
+      {backgroundColor: '#000', opacity: 1, transform: 'rotate(0deg) translate3D(0, 0, 0)'},
+      {backgroundColor: '#440000', opacity: 0.3},
+      {backgroundColor: '#000', opacity: 1, transform: 'rotate(360deg) translate3D(0, 0, 0)'},
 
-rotatingSquare.animate(
-  [
-    {backgroundColor: '#000', opacity: 1, transform: 'rotate(0deg) translate3D(0, 0, 0)'},
-    {backgroundColor: '#440000', opacity: 0.3},
-    {backgroundColor: '#000', opacity: 1, transform: 'rotate(360deg) translate3D(0, 0, 0)'},
+    ],
+    {
+      duration: 500,
+      iterations: Infinity,
+      easing: 'ease-in-out'
+    }
+  )
 
-  ],
-  {
-    duration: 500,
-    iterations: Infinity,
-    easing: 'ease-in-out'
-  }
-)
+
+btnPlay.addEventListener('click', () => rotatingSquare.play())
+btnPause.addEventListener('click', () => rotatingSquare.pause())
+btnSpeedUp.addEventListener('click', () => rotatingSquare.playbackRate+=0.2)
+btnSlowDown.addEventListener('click', () => rotatingSquare.playbackRate-=0.2)
+
