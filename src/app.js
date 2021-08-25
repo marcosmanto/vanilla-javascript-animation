@@ -119,13 +119,13 @@ const rotatingSquare = document.getElementById('web-animation')
 
 rotatingSquare.animate(
   [
-    {backgroundColor: '#000'},
-    {backgroundColor: '#440000'},
-    {backgroundColor: '#000'},
+    {backgroundColor: '#000', opacity: 1, transform: 'rotate(0deg) translate3D(0, 0, 0)'},
+    {backgroundColor: '#440000', opacity: 0.3},
+    {backgroundColor: '#000', opacity: 1, transform: 'rotate(360deg) translate3D(0, 0, 0)'},
 
   ],
   {
-    duration: 1000,
-    iterations: 7
+    duration: 500,
+    iterations: Infinity
   }
 )
