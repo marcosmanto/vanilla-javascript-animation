@@ -126,6 +126,7 @@ rotatingSquare.animate(
   ],
   {
     duration: 500,
-    iterations: Infinity
+    iterations: Infinity,
+    easing: 'ease-in-out'
   }
 )
