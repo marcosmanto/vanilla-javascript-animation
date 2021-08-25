@@ -156,6 +156,8 @@ const img = new Image()
 let count = 0
 let x
 let y
+let xpos = 0
+let ypos = 0
 let start
 
 function draw(time) {
@@ -166,12 +168,12 @@ function draw(time) {
   */
 
   requestAnimationFrame(draw)
-  ctx.clearRect(0, 0, 212, 201)
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
   counter.innerText = count
   x = (count % 9) * 212
   y = Math.floor(count/9) * 201
 
-  ctx.drawImage(img, x, y, 212, 201, 0, 0, 212, 201)
+  ctx.drawImage(img, x, y, 212, 201, xpos++, ypos++, 212, 201)
 
   if (count === 149)
     count = 0
